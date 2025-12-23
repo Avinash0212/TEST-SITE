@@ -4,12 +4,8 @@ title: L3VPN Mind Map
 layout: none
 ---
 
-<!-- Global Courier New font -->
 <style>
-  html, body {
-    font-family: "Courier New", Courier, monospace;
-  }
-  /* Optional: subtle glow on hover over Mermaid nodes */
+  html, body { font-family: "Courier New", Courier, monospace; }
   .mermaid svg g.node:hover > rect,
   .mermaid svg g.node:hover > circle,
   .mermaid svg g.node:hover > polygon {
@@ -21,21 +17,18 @@ layout: none
 
 # L3VPN Mind Map (Mermaid)
 
-Below is a Mermaid mindmap rendered client-side.  
-**Color scheme**: dark gray nodes, white subtopic cards, black-ish connector lines.  
-**Font**: Courier New.
-
-```mermaid
-%%{init: { 
+{% raw %}
+<div class="mermaid">
+%%{init: {
   "theme": "neutral",
   "securityLevel": "loose",
   "themeVariables": {
     "fontFamily": "Courier New, Courier, monospace",
-    "primaryColor": "#4a4a4a",        /* dark gray tabs */
-    "primaryTextColor": "#ffffff",     /* white text on dark tabs */
-    "lineColor": "#2f2f2f",            /* connector strokes */
-    "tertiaryColor": "#f6f6f6",        /* light gray for subtopic cards */
-    "background": "#ffffff"            /* page background */
+    "primaryColor": "#4a4a4a",
+    "primaryTextColor": "#ffffff",
+    "lineColor": "#2f2f2f",
+    "tertiaryColor": "#f6f6f6",
+    "background": "#ffffff"
   }
 }}%%
 mindmap
@@ -51,3 +44,23 @@ mindmap
 
     https://yourdomain.example/l3vpn/main-topic-5
     https://yourdomain.example/l3vpn/main-topic-9
+</div>
+{% endraw %}
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    securityLevel: 'loose',
+    themeVariables: {
+      fontFamily: 'Courier New, Courier, monospace',
+      primaryColor: '#4a4a4a',
+      primaryTextColor: '#ffffff',
+      lineColor: '#2f2f2f',
+      tertiaryColor: '#f6f6f6',
+      background: '#ffffff'
+    }
+  });
+</script>
+
